@@ -89,4 +89,6 @@ declare module "pg" {
     namespace types {
         function setTypeParser<T>(typeId: number, parser: (value: string) => T): void;
     }
+
+    export var defaults: Defaults;
 }

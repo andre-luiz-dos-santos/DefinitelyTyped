@@ -6,6 +6,9 @@ var conString = "postgres://username:password@localhost/database";
 // https://github.com/brianc/node-pg-types
 pg.types.setTypeParser(20, (val) => Number(val));
 
+// https://github.com/brianc/node-postgres/wiki/pg
+pg.defaults.poolSize = 25;
+
 // Client pooling
 pg.connect(conString, (err, client, done) => {
     if (err) {
